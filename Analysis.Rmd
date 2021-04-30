@@ -64,16 +64,17 @@ kamala_months <- events_month %>%
   count(month = month(date))
 
 kamala_months
+saveRDS(kamala_months, "kamala_months.rds")
 
 mychart1<-kamala_months %>% 
   plot_ly(x = ~month, 
           y = ~n,
           type = "bar")
-mychart1
 
 mychart1<- mychart1 %>% 
   layout(title= "Total Trips by Harris each Month")
 mychart1
+saveRDS(mychart1, "mychart1.rds")
 ```
 
 
