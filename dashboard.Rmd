@@ -1,0 +1,56 @@
+---
+title: "Campaign Events"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(lubridate)
+library(DT)
+library(plotly)
+
+kamala_months <- readRDS("kamala_months.rds")
+
+mychart2<- readRDS("mychart1.rds")
+
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Harris Trips by Months
+
+```{r}
+mychart1<-kamala_months %>% 
+  plot_ly(x = ~month, 
+          y = ~n,
+          type = "bar")
+mychart1
+
+
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+mychart2
+
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
